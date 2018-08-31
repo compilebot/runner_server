@@ -177,6 +177,6 @@ func getLogs(id string, cli *client.Client) string {
 func generateID(lang string) (id string) {
 	ts := time.Now().Unix()
 	id = fmt.Sprintf("%s-runner-%v", lang, ts)
-	fmt.Println(id)
+	id = id[:20]
 	return
 }

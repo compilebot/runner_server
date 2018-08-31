@@ -7,6 +7,7 @@ require (
 	github.com/docker/docker v1.13.1
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.3.3 // indirect
+	github.com/franela/goblin v0.0.0-20180624194345-6af5ecb776ce
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stevvooe/resumable v0.0.0-20170302213456-2aaf90b2ceea // indirect
