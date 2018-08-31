@@ -22,6 +22,7 @@ import (
 // New is the function to create a new container and run the code passed into it
 func New(code string) string {
 	id := generateID(code)
+	id = "go-runner"
 	err := writeCodeToFile(code)
 
 	if err != nil {
@@ -35,6 +36,8 @@ func New(code string) string {
 
 	buildImage(cli, id)
 	x := buildContainer(cli, id)
+
+	time.Sleep(5 * time.Second)
 
 	y := getLogs(x, cli)
 	fmt.Println(y)
