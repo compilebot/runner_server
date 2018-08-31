@@ -14,9 +14,9 @@ func failOnError(err error, msg string) {
 }
 
 func main() {
-	MQ_HOST := os.Getenv("MQ_HOST")
+	mqHost := os.Getenv("MQ_HOST")
 
-	conn, err := amqp.Dial(MQ_HOST)
+	conn, err := amqp.Dial(mqHost)
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 
