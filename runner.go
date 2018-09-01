@@ -22,7 +22,6 @@ import (
 // New is the function to create a new container and run the code passed into it
 func New(code string) string {
 	id := generateID(code)
-	id = "go-runner"
 	err := writeCodeToFile(code)
 
 	if err != nil {
@@ -175,11 +174,4 @@ func getLogs(id string, cli *client.Client) string {
 	}
 
 	return b.String()
-}
-
-func generateID(lang string) (id string) {
-	ts := time.Now().Unix()
-	id = fmt.Sprintf("%s-runner-%v", lang, ts)
-	id = id[:20]
-	return
 }
