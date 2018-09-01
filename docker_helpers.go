@@ -3,11 +3,9 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 func generateID(lang string) (id string) {
-	rand.Seed(time.Now().Unix())
 	ts := randomString(20 - len(lang))
 	id = fmt.Sprintf("%s-runner-%v", lang, ts)
 	id = id[:20]
