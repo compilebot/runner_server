@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
 	"time"
@@ -21,7 +22,8 @@ import (
 
 // New is the function to create a new container and run the code passed into it
 func New(code string) string {
-	id := generateID(code)
+	rand.Seed(time.Now().Unix())
+	id := generateID("go")
 	err := writeCodeToFile(code)
 
 	if err != nil {

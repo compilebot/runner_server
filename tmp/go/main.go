@@ -1,11 +1,17 @@
- package main
 
-import (
-    "fmt"
-    "time"
-)
+package main
+
+import "fmt"
 
 func main() {
-    time.Sleep(3 * time.Second)
-    fmt.Println("hi")
+    fmt.Println(fib(10))
+}
+
+func fib(n int) int{
+
+if n < 2 { 
+return n 
+}
+
+return fib(n-1) + fib(n-2)
 }
